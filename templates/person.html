@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Person Detaljer - Personregister{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Person Detaljer</h1>
+        <p><span class="attribute">Namn:</span> {{ person.namn }}</p>
+        <p><span class="attribute">Ålder:</span> {{ person.alder }}</p>
+        <p><span class="attribute">Telefonnummer:</span> {{ person.telefonnummer }}</p>
+        <p><span class="attribute">Land:</span> {{ person.land }}</p>
+        <!-- Om du vill lägga till en bild, använd följande rad och ersätt 'bildlänk.jpg' med den faktiska bildlänken -->
+        <img src="{{ url_for('static', filename='images/bild.jpeg') }}" width="70px" alt="Personbild" style="max-width:100%;height:auto;">
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Alla Personer - Personregister{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Alla Personer</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Namn</th>
+                    <th>Ålder</th>
+                    <th>Telefonnummer</th>
+                    <th>Land</th>
+                    <th>Detaljer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in personer %}
+                    <tr>
+                        <td>{{ person.namn }}</td>
+                        <td>{{ person.alder }}</td>
+                        <td>{{ person.telefonnummer }}</td>
+                        <td>{{ person.land }}</td>
+                        <td><a href="/person/{{ person.id }}">Visa</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
